@@ -1,0 +1,12 @@
+services:
+  airflow:
+    image: apache/airflow:2.8.1
+    command: ["standalone"]   # runs webserver + scheduler + init
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
