@@ -1,0 +1,54 @@
+Data Preparation (Power Query)   -- give me 50 scenario based interview questions under this topic
+Here are 50 scenario-based interview questions focused on Data Preparation with Power Query. Each question presents a practical situation that tests applied knowledge of data acquisition, transformation, and shaping using Power Query and M.
+
+You receive weekly sales files where column headers vary in case (“ProductID” vs. “productid”). How would you standardize column names automatically during ingestion?
+A CSV export includes text values wrapped in quotes, but some rows contain newline characters inside the field values, causing row breaks. How do you fix this in Power Query so the data aligns correctly?
+You need to combine monthly files stored in a folder, but each month introduces new columns. How would you append these tables while capturing which columns were missing per month?
+Your data contains separate “Date” and “Time” columns. How would you merge them into a single DateTime field while preserving the original columns?
+A column contains nested JSON strings. Describe how you would extract specific fields from the JSON into individual columns.
+An Excel sheet includes subtotals and totals scattered between data rows. How would you remove these subtotal rows programmatically?
+How would you pivot a dataset where each row contains “Attribute” and “Value” columns, but some attributes appear multiple times per entity?
+A table has duplicate rows except for a “LastUpdated” timestamp. How do you keep only the most recent record per key?
+You need to detect and flag any rows where the “Quantity” column contains negative numbers, but only if the “Status” is “Closed.” How would you add such a custom column?
+Your dataset has revised entries in a “Corrections” table that should override values in the main table. How would you merge and apply corrections in Power Query?
+An import transformation must run differently depending on the environment (Dev vs. Prod). How do you parameterize a file path or database connection string?
+You want to refresh data but only load records where the “LastModifiedDate” is greater than the max date already in the destination table. How would you implement incremental ingestion in Power Query?
+The number of header rows varies per file because vendors include random notes at the top. How would you identify the actual header row dynamically?
+A data column contains inconsistent date formats (e.g., “2023-04-01”, “1/4/2023”, “April 1 2023”). How would you standardize these to a single date type?
+A source feed occasionally includes completely blank rows or rows with only whitespace. How would you filter them out?
+You need to generate a surrogate key that concatenates multiple columns but handles null values gracefully. Describe your approach.
+The first row of a dataset contains metadata you need; the actual header row starts at row 3. How do you keep the metadata and set correct column headers?
+Two tables must be combined with a fuzzy match on company names that may differ slightly. How would you configure fuzzy matching in Power Query, and what settings would you adjust?
+You’re handed a large CSV file with millions of rows. How do you optimize Power Query steps to avoid performance issues during preview and refresh?
+A source API requires authentication via a key stored in an Azure Key Vault. How would you retrieve the secret securely within Power Query?
+You need to unpivot dynamic sets of “Month” columns into a Year-Month attribute-value table. How would you handle the scenario when new months appear?
+How would you handle a scenario where the dataset includes multi-line text fields that you need to split into separate columns based on a delimiter?
+You receive a file with Polish characters that display incorrectly after import. How would you ensure the correct encoding is applied in Power Query?
+A dataset includes product hierarchies embedded in a single column using “>” as a delimiter (e.g., “Electronics>Audio>Headphones”). How do you split and explode this into multiple hierarchy levels?
+You must calculate a rolling 3-month average in Power Query. Describe how you would perform this without switching to DAX.
+Two columns need to be merged into one, but only for rows where the second column isn’t null; otherwise, keep the first column. How would you write that conditional logic in M?
+Your project requires auditing all queries: capturing query execution time, number of rows loaded, and last refresh date. How would you design such an audit mechanism?
+An Excel file has multiple worksheets with the same structure. How would you dynamically combine them into a single table while adding a column identifying the sheet name?
+A table contains measurement values in mixed units (e.g., inches and centimeters). How would you standardize them to one unit based on a “Unit” column?
+You need to create a lookup table of distinct customers from a fact table, but also include the date of their most recent purchase. How would you achieve this?
+In a staged dataset, some numeric fields are stored as text with thousands separators and decimal commas (e.g., “1.234,56”). How do you normalize them to proper numeric data?
+You’re ingesting data from a web page that requires pagination. How would you configure Power Query to iterate through pages until no more data is returned?
+The schema of an Azure SQL database changes frequently. How would you handle automatic adjustments to column additions or removals in Power Query queries?
+A source contains hierarchical parent-child relationships. How would you produce a flattened hierarchy with paths for each child?
+How do you handle a requirement to split a table dynamically into multiple queries based on a “Region” column, then load each region-specific dataset separately?
+A table contains multiple date columns (OrderDate, ShipDate) that need to be normalized to a single custom date dimension. How would you unpivot them and retain context?
+You need to record data quality issues (e.g., nulls in required fields) into a separate log table while keeping the main data clean. How would you design the query steps?
+A dataset includes change flags (Created, Updated, Deleted). How would you process records differently depending on the flag?
+You have budget data in Excel and actual data in SQL with different granularities. Describe how you’d shape both to enable a unified comparison.
+A Power Query refresh fails because of changes to column names. How would you build resilience so the query recovers even if column names change to known patterns?
+You need to filter records based on whether an ID exists in a dynamic list stored in SharePoint. How do you reference this list and apply the filter?
+Ingesting data from an API returns nested arrays and records. How would you flatten them while preserving relationships between nested elements?
+A dataset has columns for “StartDate” and “EndDate,” and you need one row per day between these dates. How would you expand each row into daily records?
+How would you handle a scenario where numeric columns occasionally contain error values like “N/A” or “Divide by zero”? Describe how to replace errors with defaults.
+You need to maintain a history of data snapshots in Power Query with added “SnapshotDate.” How would you append the current extract to historical data automatically?
+Multiple data sources share the same business rules for cleansing (e.g., trimming, null replacements). How would you reuse Power Query steps across different queries?
+You need to perform fuzzy grouping on customer names to cluster similar variations. How would you set up fuzzy grouping and tune similarity thresholds?
+A dataset includes a “Notes” column containing commands like “#Keep” or “#Remove.” How would you parse these tags to determine which rows to keep or discard?
+You are asked to convert a dataset with columns representing economic indicators into a “long” format where each indicator becomes a row. How would you execute that transformation?
+During a refresh, a query needs to detect whether the source file exists. How would you build logic that handles missing files gracefully and logs the issue?
+These scenarios probe real-world Power Query proficiency—covering da
